@@ -1,0 +1,8 @@
+@(formCliente: Form[Cliente])
+@import helper._
+@main("Cadastrar Cliente") {
+    @helper.form(routes.Application.novoCliente){
+        @inputText(formCliente("Descricao"), '_label -> "Nome do Cliente")
+        <input type="submit" value="Criar">
+    }
+}

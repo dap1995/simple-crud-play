@@ -1,0 +1,23 @@
+@(clientes: List[Cliente])
+
+@main("Lista de Clientes") {
+    @if(clientes.isEmpty){
+        <h3>Não há nenhum registro de cliente</h3>
+    } else {
+        <h3>Clientes Cadastrados:</h3>
+        <table>
+            <tr>
+                <th>id</th>
+                <th>nome</th>
+            </tr>
+            @for(cliente <- clientes){
+                <tr>
+                    <td>@cliente.getId</td>
+                    <td>@cliente.getDescricao</td>
+                </tr>
+            }
+        </table>
+    }
+    <hr>
+        <a href="@routes.Application.formularioNovoCliente">Novo Cliente</a>
+}
